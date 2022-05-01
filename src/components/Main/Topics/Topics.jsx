@@ -1,28 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import './Topics.css'
-import { v4 as uuidv4 } from 'uuid';
 const Topics = () => {
   const [value, setValue] = useState(""); // Para guardar el dato a buscar
-  const [posts, setPosts] = useState([]); // Para guardar los posts
+  const [pokemon, setPokemons] = useState({}); // Para guardar los posts
+  const [loading, setLoading] = useState(false);
   // equivale a un componentDidUpdate()
   useEffect(() => {
     async function fetchData() {
       try{
+        setLoading(true)
         // Petición HTTP
         const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${value}`);
         const json = res.data;
-        // Guarda en el array de posts el resultado. Procesa los datos
-        
-     let arr = []
-      arr = Object.entries(json)
 
-        console.log(arr,"este es el array definitivo")
-        // console.log(Object.entries(json),"array del objeto de pokemons")
-        setPosts(arr);
-      
+        setPokemons(json);
+        setLoading(false)
       }catch(e){
-        setPosts([]) // No pintes nada
+        setPokemons([]) // No pintes nada
       }
     }
     fetchData();
@@ -39,19 +34,13 @@ const Topics = () => {
               <form onSubmit={handleSubmit}>
                 <input name="topic"/>
               </form>
-              {posts.length!==0?
-                          
-                                <ul className='topics'>
-                                  {posts.map(post => (
-                                    <li key={uuidv4()}>
-                                      {post.abilities}
-                                      { console.log(post[0][1][0].name,"hola desde jsx con post y el name") }
-                                      </li>
-                                    
-                                    // <p>hola</p>
-                                  ))}
-                               
-                                </ul>
+              {!loading && pokemon?
+                          <div className="searchedPoke">
+                          <p>Name: {pokemon.name}</p>
+                          <p>Id: {pokemon.id}</p>
+                          <p>Weight: {pokemon.weight}</p>
+                          <img src={pokemon.sprites.front_default} alt='pokemon' style={{width: "200px"}}/>
+                          </div>
                              
                                 :""
               }
