@@ -1,0 +1,32 @@
+@import '../utils/mixins.scss';
+@import '../utils/variables.scss';
+
+.busqueda{
+    border: 3px solid black;
+    border-radius: 6px;
+}
+
+
+.searchedPoke{
+    // border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 22px;
+    font-weight: bold;
+    
+}
+
+.imagenpoke{
+    max-width: 80%;
+}
+
+.pokeinfo{
+    margin: 30px;
+    width: 30%;
+    border: 8px solid rgb(1, 8, 1);
+    border-radius: 20px;
+    background-color: rgb(238, 175, 93);
+}
