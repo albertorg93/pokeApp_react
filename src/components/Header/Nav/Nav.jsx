@@ -8,6 +8,7 @@ class Nav extends Component {
   render() {
     return <div className="nav">
       <Link to="/card" className="nav__element">Home</Link>
+      <Link to="/listapokemon" className="nav__element">Lista de Pokemons</Link>
     </div>;
   }
 }

@@ -4,8 +4,9 @@
 .nav{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    width: 50%;
     &__element {
         text-decoration:none;
         color: $text-color;
