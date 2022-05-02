@@ -45,8 +45,7 @@ const Card = () => {
                           <p>Name: {pokemon.name}</p>
                           <p>Id: {pokemon.id}</p>
                           <p>Weight: {pokemon.weight}</p>
-                          {/* <img src={pokemon.sprites.front_default} alt='pokemon' style={{width: "300px"}}/> */}
-                          <img src={pokemon.sprites.other.dream_world.front_default} alt='pokemon' style={{width: "300px"}}/>
+                          <img className='imagenpoke' src={pokemon.sprites.other.dream_world.front_default} alt='pokemon'/>
                           </div>
                           </section>
                              
