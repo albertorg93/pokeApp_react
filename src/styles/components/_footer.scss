@@ -1,8 +1,11 @@
 @import '../utils/variables.scss';
 
-footer {
+.footerclass {
     background-color: $menu-color;
-    color: $text-color;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 30px;
+    color: black;
     bottom: 0;
     position:absolute;
     width: 100%;

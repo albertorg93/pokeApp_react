@@ -31,7 +31,6 @@ const Card = () => {
               </form>
               {pokemon.sprites === undefined? 
                 <div>
-                Busca tu pokemon favorito
                 </div>: 
                           <section className="searchedPoke">
                           <div className='pokeinfo'>
