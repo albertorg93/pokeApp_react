@@ -34,7 +34,10 @@ const Topics = () => {
               <form onSubmit={handleSubmit}>
                 <input name="topic"/>
               </form>
-              {!loading && pokemon?
+              {pokemon.sprites === undefined? 
+                <div>
+              Bienvenido a la pokeapi
+                </div>:
                           <div className="searchedPoke">
                           <p>Name: {pokemon.name}</p>
                           <p>Id: {pokemon.id}</p>
@@ -42,7 +45,7 @@ const Topics = () => {
                           <img src={pokemon.sprites.front_default} alt='pokemon' style={{width: "200px"}}/>
                           </div>
                              
-                                :""
+                                
               }
               
             </section>
