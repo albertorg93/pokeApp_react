@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ba20443e.css",
+    "main.js": "/static/js/main.a966dab8.js",
+    "static/js/787.7a88fae9.chunk.js": "/static/js/787.7a88fae9.chunk.js",
+    "static/media/logopoke.png": "/static/media/logopoke.11012dfdc20912a1a39b.png",
+    "index.html": "/index.html",
+    "main.ba20443e.css.map": "/static/css/main.ba20443e.css.map",
+    "main.a966dab8.js.map": "/static/js/main.a966dab8.js.map",
+    "787.7a88fae9.chunk.js.map": "/static/js/787.7a88fae9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ba20443e.css",
+    "static/js/main.a966dab8.js"
+  ]
+}
