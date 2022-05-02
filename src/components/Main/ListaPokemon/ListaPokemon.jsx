@@ -1,17 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef  } from 'react';
 import axios from 'axios'
 const ListaPokemon = () => {
   const [value, setValue] = useState(""); // Para guardar el dato a buscar
   const [pokemon, setPokemons] = useState([]); // Para guardar los posts
-
   // equivale a un componentDidUpdate()
+  const previousArr = useRef([]);
+  // let arr = []
   useEffect(() => {
     async function fetchData() {
       try{
         // Petición HTTP
         const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${value}`);
         const json = res.data;
-        setPokemons(json);
+        //  arr = json
+        // setPokemons([...pokemon, json]);
+          //  setPokemons(json.push(arr));
+
+          setPokemons(json)
       }catch(e){
         setPokemons([]) // No pintes nada
       }
@@ -25,7 +30,7 @@ const ListaPokemon = () => {
   };
 
   return    <section>
-              <h1> Bienvenido a la Pokedex</h1>
+              <h1> Accede a tu lista de Pokemons buscados</h1>
               <form onSubmit={handleSubmit}>
                 <input name="topic" className='busqueda'/>
               </form>
