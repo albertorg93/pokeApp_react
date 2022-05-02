@@ -1,26 +1,15 @@
 import React, { Component } from 'react'
-import ProductList from './ProductList'
-import Chefs from './Chefs'
-import About from './About'
-import Contact from './Contact'
-import Delivery from './Devivery'
+import logopoke from '../../assets/logopoke.png'
 import { Route,Routes } from 'react-router-dom'
-import Topics from './Topics'
+import Card from './Card'
 
 export class Main extends Component {
   render() {
     return (
       <main>
-          <h1>Futura web - Exploding Cakes!!</h1>
-          <p>Esto es el main</p>
+          <img className='logoinicial' src={logopoke} alt="logopokemon"/>
           <Routes>
-          <Route element={<ProductList/>} path='/'/>
-          <Route element={<Chefs/>} path='/listachefs'/>
-          <Route element={<About/>} path='/about'/>
-          <Route element={<Delivery/>} path='/delivery'/>
-          <Route element={<Topics/>} path='/topics'/>
-          <Route element={<Contact/>} path='/contact'/>
-
+          <Route element={<Card/>} path='/card'/>
           </Routes>
           
       </main>
