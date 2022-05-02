@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
-import './Topics.css'
-const Topics = () => {
+// import './Topics.css'
+const Card = () => {
   const [value, setValue] = useState(""); // Para guardar el dato a buscar
   const [pokemon, setPokemons] = useState({}); // Para guardar los posts
   // const [loading, setLoading] = useState(false);
@@ -55,8 +55,7 @@ const Topics = () => {
               
             </section>
 };
-export default Topics;
-
+export default Card;
 
 
 
