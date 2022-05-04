@@ -5,7 +5,7 @@ export class Header extends Component {
   render() {
     return (
       <header className='header'>
-         <img src={logo} alt='logo'></img>
+         <img src={logo} alt='logo' style={{width: 100}}></img>
         <Nav/>
  
         </header>
