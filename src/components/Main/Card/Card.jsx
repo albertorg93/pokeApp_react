@@ -2,7 +2,6 @@ import React from 'react'
 
 const Card = (props) => {
    const pokemon = props.data;
-   console.log(pokemon)
 
   return    <section>
              
@@ -19,7 +18,7 @@ const Card = (props) => {
                           </div>
                           </section>                                
               }
-              
+
             </section>
 };
 export default Card;

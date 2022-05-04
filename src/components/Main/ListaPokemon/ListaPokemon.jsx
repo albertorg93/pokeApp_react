@@ -1,25 +1,25 @@
 import React from 'react'
 
 const ListaPokemon = (props) => {
-   const pokelista = props.data;
-   console.log(pokelista[0])
+   const pokemon = props.data;
+   console.log(pokemon)
 
   return    <section>
-{/*              
-              {pokelista[0].sprites === undefined? 
+             
+              {pokemon.sprites === undefined? 
                 <div>
                 </div>: 
                           <section className="searchedPoke">
                           <div className='pokeinfo'>
-                          <p>Name: {pokelista[0].name}</p>
-                          <p>Id: {pokelista[0].id}</p>
-                          <p>Height: {pokelista[0].height}</p>
-                          <p>Weight: {pokelista[0].weight}</p>
-                          <img className='imagenpoke' src={pokelista[0].sprites.other.dream_world.front_default} alt='pokemon'/>
+                          <p>Name: {pokemon.name}</p>
+                          <p>Id: {pokemon.id}</p>
+                          <p>Height: {pokemon.height}</p>
+                          <p>Weight: {pokemon.weight}</p>
+                          <img className='imagenpoke' src={pokemon.sprites.other.dream_world.front_default} alt='pokemon'/>
                           </div>
                           </section>                                
               }
-               */}
+              
             </section>
 };
 export default ListaPokemon;
@@ -27,7 +27,11 @@ export default ListaPokemon;
 
 
 
-
+// {
+//   pokemons.map((pokemon, index) => {
+//       return <div key={index} pokemon={pokemon}/> </div>
+//   })
+// }
 
 
 
