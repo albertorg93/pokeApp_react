@@ -1,13 +1,14 @@
 import React, {  useEffect, useState } from 'react'
 import logopoke from '../../assets/logopoke.png'
 import { Route,Routes } from 'react-router-dom'
-// import Card from './Card'
+import Card from './Card'
 import ListaPokemon from './ListaPokemon'
 import axios from 'axios'
 
 export default function Main() {
   const [value, setValue] = useState(""); // Para guardar el dato a buscar
   const [pokemon, setPokemons] = useState([]); // Para guardar los posts
+  const [unico, setUnico] = useState([]);
   // equivale a un componentDidUpdate()
   useEffect(() => {
     async function fetchData() {
@@ -15,7 +16,8 @@ export default function Main() {
         // Petición HTTP
         const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${value}`);
         const json = res.data;
-        setPokemons([...pokemon,json]);
+        setUnico(json)
+        setPokemons([json,...pokemon]);
 
       }catch(e){
         setPokemons([]) // No pintes nada
@@ -30,7 +32,7 @@ export default function Main() {
     e.target.topic.value = ""
 
   };
-  console.log(pokemon,"esto es pokemon");
+
   return (
     <main>
     <img className='logoinicial' src={logopoke} alt="logopokemon"/>
@@ -39,10 +41,9 @@ export default function Main() {
                 <input name="topic" className='busqueda'/>
               </form>
     <Routes>
-       {/* <Route element={<Card data={pokemon}/>} path='/card'/> */}
+       <Route element={<Card data={unico}/>} path='/card'/>
     <Route element={
       pokemon.map((poke,i)=><ListaPokemon data={poke} key={i}/>)
-    
     } path='/listapokemon'/>
     </Routes>
     
