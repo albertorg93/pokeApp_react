@@ -20,6 +20,9 @@ const Card = (props) => {
                           </section>                                
               }
               
+             
+
+
             </section>
 };
 export default Card;
