@@ -1,56 +1,30 @@
-import React, { useEffect, useState, useRef  } from 'react';
-import axios from 'axios'
-const ListaPokemon = () => {
-  const [value, setValue] = useState(""); // Para guardar el dato a buscar
-  const [pokemon, setPokemons] = useState([]); // Para guardar los posts
-  // equivale a un componentDidUpdate()
-  const previousArr = useRef([]);
-  // let arr = []
-  useEffect(() => {
-    async function fetchData() {
-      try{
-        // Petición HTTP
-        const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${value}`);
-        const json = res.data;
-        //  arr = json
-        // setPokemons([...pokemon, json]);
-          //  setPokemons(json.push(arr));
+import React from 'react'
 
-          setPokemons(json)
-      }catch(e){
-        setPokemons([]) // No pintes nada
-      }
-    }
-    fetchData();
-  }, [value]);
-  const handleSubmit = e => {
-    e.preventDefault();
-    console.log(e.target.topic.value)
-    setValue(e.target.topic.value) // Modificando el estado de Value
-  };
+const ListaPokemon = (props) => {
+   const pokelista = props.data;
+   console.log(pokelista[0])
 
   return    <section>
-              <h1> Accede a tu lista de Pokemons buscados</h1>
-              <form onSubmit={handleSubmit}>
-                <input name="topic" className='busqueda'/>
-              </form>
-              {pokemon.sprites === undefined? 
+{/*              
+              {pokelista[0].sprites === undefined? 
                 <div>
                 </div>: 
                           <section className="searchedPoke">
                           <div className='pokeinfo'>
-                          <p>Name: {pokemon.name}</p>
-                          <p>Id: {pokemon.id}</p>
-                          <p>Height: {pokemon.height}</p>
-                          <p>Weight: {pokemon.weight}</p>
-                          <img className='imagenpoke' src={pokemon.sprites.other.dream_world.front_default} alt='pokemon'/>
+                          <p>Name: {pokelista[0].name}</p>
+                          <p>Id: {pokelista[0].id}</p>
+                          <p>Height: {pokelista[0].height}</p>
+                          <p>Weight: {pokelista[0].weight}</p>
+                          <img className='imagenpoke' src={pokelista[0].sprites.other.dream_world.front_default} alt='pokemon'/>
                           </div>
                           </section>                                
               }
-              
+               */}
             </section>
 };
 export default ListaPokemon;
+
+
 
 
 

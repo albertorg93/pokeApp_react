@@ -2,21 +2,24 @@ import React, {  useEffect, useState } from 'react'
 import logopoke from '../../assets/logopoke.png'
 import { Route,Routes } from 'react-router-dom'
 import Card from './Card'
-import ListaPokemon from './ListaPokemon'
+// import ListaPokemon from './ListaPokemon'
 import axios from 'axios'
 
 export default function Main() {
   const [value, setValue] = useState(""); // Para guardar el dato a buscar
   const [pokemon, setPokemons] = useState({}); // Para guardar los posts
-
   // equivale a un componentDidUpdate()
   useEffect(() => {
     async function fetchData() {
+      // let arr = []
       try{
         // Petición HTTP
         const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${value}`);
         const json = res.data;
         setPokemons(json);
+        // let lista = arr.push(json)
+        // setPokeLista(pokelista.push(json))
+        //  console.log(pokelista,"esto es la pokelista")
       }catch(e){
         setPokemons([]) // No pintes nada
       }
@@ -40,7 +43,7 @@ export default function Main() {
               </form>
     <Routes>
     <Route element={<Card data={pokemon}/>} path='/card'/>
-    <Route element={<ListaPokemon/>} path='/listapokemon'/>
+    {/* <Route element={<ListaPokemon data={pokelista}/>} path='/listapokemon'/> */}
     </Routes>
     
     </main>
