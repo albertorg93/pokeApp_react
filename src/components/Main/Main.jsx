@@ -9,16 +9,18 @@ export default function Main() {
   const [value, setValue] = useState(""); // Para guardar el dato a buscar
   const [pokemon, setPokemons] = useState([]); // Para guardar los posts
   const [unico, setUnico] = useState({});
+
   // equivale a un componentDidUpdate()
   useEffect(() => {
     async function fetchData() {
       try{
         // Petición HTTP
+        
         const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${value}`);
         const json = res.data;
         setUnico(json)
         setPokemons([json,...pokemon]);
-
+  
       }catch(e){
         setPokemons([]) // No pintes nada
       }
@@ -32,7 +34,7 @@ export default function Main() {
     e.target.topic.value = ""
 
   };
-console.log(unico)
+
   return (
     <main>
     <img className='logoinicial' src={logopoke} alt="logopokemon"/>
